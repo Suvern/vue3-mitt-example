@@ -1,5 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
+  <button @click="handleClick()">这是一个按钮</button>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
@@ -10,7 +11,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    handleClick() {
+      this.$bus.$emit('click')
+    }
+  },
 }
 </script>
 
